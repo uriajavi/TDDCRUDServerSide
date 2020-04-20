@@ -12,6 +12,7 @@ import javax.enterprise.context.Dependent;
  * Customer TDD entity.
  * @author javi
  */
+@Dependent
 public class Customer {
     
 }

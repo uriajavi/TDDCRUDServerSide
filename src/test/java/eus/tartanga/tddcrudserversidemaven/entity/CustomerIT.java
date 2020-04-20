@@ -33,6 +33,9 @@ public class CustomerIT {
                 //.addAsResource("META-INF/persistence.xml");
     }
 
+    @Inject
+    Customer customer;
+    
     @Test
     public void testCustomerConstruction() throws Exception {
         Customer customer=Customer.class.getConstructor().newInstance();
@@ -40,4 +43,10 @@ public class CustomerIT {
                       customer);
     }
 
+    @Test
+    public void testCustomerInjection() throws Exception {
+        assertNotNull("The bean cannot be constructed!!!",
+                      customer);
+    }
+    
 }
