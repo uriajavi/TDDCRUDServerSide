@@ -1,0 +1,11 @@
+<arquillian xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://jboss.org/schema/arquillian http://jboss.org/schema/arquillian/arquillian-1.0.xsd">
+
+    <container default="true" qualifier="glassfish">
+        <configuration>
+            <property name="adminPort">4848</property>
+            <property name="adminUser">admin</property>
+            <property name="adminPassword">abcd*1234</property> 
+        </configuration>
+    </container>
+    
+</arquillian>
