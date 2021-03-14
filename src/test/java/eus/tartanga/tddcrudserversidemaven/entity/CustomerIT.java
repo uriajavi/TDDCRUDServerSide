@@ -5,6 +5,7 @@
  */
 package eus.tartanga.tddcrudserversidemaven.entity;
 
+import java.io.Serializable;
 import javax.inject.Inject;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -13,6 +14,7 @@ import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 import org.junit.runner.RunWith;
 
 /**
@@ -45,8 +47,14 @@ public class CustomerIT {
 
     @Test
     public void testCustomerInjection() throws Exception {
-        assertNotNull("The bean cannot be constructed!!!",
+        assertNotNull("The bean cannot be injected!!!",
                       customer);
+    }
+    
+    @Test
+    public void testBeanIsSerializable() {
+        assertTrue("The bean is not Serializable!!!",
+                    customer instanceof Serializable);
     }
     
 }

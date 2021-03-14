@@ -5,7 +5,7 @@
  */
 package eus.tartanga.tddcrudserversidemaven.entity;
 
-import javax.enterprise.context.ApplicationScoped;
+import java.io.Serializable;
 import javax.enterprise.context.Dependent;
 
 /**
@@ -13,6 +13,6 @@ import javax.enterprise.context.Dependent;
  * @author javi
  */
 @Dependent
-public class Customer {
+public class Customer implements Serializable{
     
 }
