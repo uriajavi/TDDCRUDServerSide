@@ -14,5 +14,96 @@ import javax.enterprise.context.Dependent;
  */
 @Dependent
 public class Customer implements Serializable{
+
+    private Long id;
+    private String firstName;
+    private String lastName;
+    private String middleInitial;
+    private String street;
+    private String city;
+    private String state;
+    private Integer zip;
+    private Long phone;
+    private String email;
+    
+    public void setId(Long id) {
+        this.id=id;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName=firstName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName=lastName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setMiddleInitial(String middleInitial) {
+        this.middleInitial=middleInitial;
+    }
+
+    public String getMiddleInitial() {
+        return middleInitial;
+    }
+
+    public void setStreet(String street) {
+        this.street=street;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setCity(String city) {
+        this.city=city;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setState(String state) {
+        this.state=state;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setZip(Integer zip) {
+        this.zip=zip;
+    }
+
+    public Integer getZip() {
+        return zip;
+    }
+
+    public void setPhone(Long phone) {
+        this.phone=phone;
+    }
+
+    public Long getPhone() {
+        return phone;
+    }
+
+    public void setEmail(String email) {
+        this.email=email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
     
 }
