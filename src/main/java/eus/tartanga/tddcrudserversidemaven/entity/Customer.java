@@ -106,4 +106,30 @@ public class Customer implements Serializable{
         return email;
     }
     
+    @Override
+    public String toString(){
+        return "Customer: ID="+id+" NAME="+firstName+" "+lastName;
+    }
+
+    @Override
+    public int hashCode(){
+        return id.hashCode();
+    }
+    
+    @Override
+    public boolean equals(Object object){
+        if (!(object instanceof Customer)) {
+            return false;
+        }
+        Customer other = (Customer) object;
+        if ((this.id == null && other.id != null) || 
+            (this.id != null && !this.id.equals(other.id))||
+            (this.firstName == null && other.firstName != null) || 
+            (this.firstName != null && !this.firstName.equals(other.firstName))||
+            (this.lastName == null && other.lastName != null) || 
+            (this.lastName != null && !this.lastName.equals(other.lastName))) {
+            return false;
+        }
+        return true;
+    }
 }

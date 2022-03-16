@@ -127,5 +127,49 @@ public class CustomerIT {
         assertEquals("Email property is not accesible!!!",
                     email,customer.getEmail());
     }
+    @Test
+    public void testToString(){
+        Long id=1l;
+        customer.setId(id);
+        String firstName="John";
+        customer.setFirstName(firstName); 
+        String lastName="Doe";
+        customer.setLastName(lastName);
+        assertEquals("String value for customer is not as expected!!!",
+                    "Customer: ID="+id+" NAME="+firstName+" "+lastName,
+                    customer.toString());
+    }
+    @Test
+    public void testHashCode() {
+        Long id=666l;
+        customer.setId(id);
+        assertEquals("hashCode value is not as expected!!!",
+                     id.hashCode(),customer.hashCode());
+    }
+    @Test
+    public void testBeanEquality() {
+        customer.setId(2l);
+        customer.setFirstName("Jane"); 
+        customer.setLastName("Doe");
+        Customer bean=new Customer();
+        bean.setId(2l);
+        bean.setFirstName("Jane");
+        bean.setLastName("Doe");
+        assertEquals("Customers are not equal!!!",
+                      customer,bean);
+    }
+    @Test
+    public void testBeanInequality() {
+        customer.setId(2l);
+        customer.setFirstName("Jane"); 
+        customer.setLastName("Doe");
+        Customer bean=new Customer();
+        bean.setId(1l);
+        bean.setFirstName("John");
+        bean.setLastName("Foo");
+        assertNotEquals("Customers are not equal!!!",
+                      customer,bean);
+    }
 
+    
 }
